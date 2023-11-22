@@ -1,0 +1,11 @@
+@mixin centerAll() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin mediaQuery($width: 480px) {
+    @media screen and (min-width: $width) {
+        @content
+    }
+}

@@ -1,0 +1,265 @@
+.banner1 {
+    background-color: #b49bc8;
+    .container {
+        padding: 5rem 1.5rem;
+        padding-bottom: 13rem;
+        .banner1-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            .banner1-text1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+                gap: 2rem;
+                h2 {
+                    text-align: center;
+                    color: black;
+                    font-size: 2.6rem;
+                    font-weight: bold;
+                    line-height: 3rem;
+                }
+                p {
+                    text-align: center;
+                    color: black;
+                    font-size: 1.7rem;
+                }
+            }
+            .banner1-text2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5rem;
+                a {
+                    text-align: center;
+                    color: white;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    background-color: black;
+                    width: 100%;
+                    padding: 1.3rem 0;
+                    border-radius: 3rem;
+                    &:hover {
+                        scale: 1.05;
+                    }
+                }
+                p {
+                    text-align: center;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+    @include mediaQuery(1080px) {
+        & {
+            .container {
+                padding: 7.5rem 1.5rem;
+                .banner1-wrapper {
+                    gap: 3rem;
+                    .banner1-text1 {
+                        width: 98%;
+                        gap: 3rem;
+                        h2 {
+                            font-size: 4rem;
+                            line-height: unset;
+                        }
+                        p {
+                            font-size: 2.5rem;
+                        }
+                    }
+                    .banner1-text2 {
+                        a {
+                            width: 17%;
+                        }
+                        p {
+                            width: 65%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner2 {
+    .container {
+        padding-bottom: 10rem;
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding: 2rem 0;
+            padding-bottom: 3rem;
+            color: black;
+        }
+        .banner2-wrapper {
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            gap: 6rem;
+            .content-container {
+                display: flex;
+                width: 100%;
+                gap: 3rem;
+                .content-image {
+                    max-width: 10rem;
+                    img {
+                        display: flex;
+                    }
+                }
+                .content-text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 1rem;
+                    h3 {
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                        color: black;
+                    }
+                    p {
+                        font-size: 1.5rem;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+    @include mediaQuery(1080px) {
+        & {
+            .container {
+                h1 {
+                    padding: 5rem 0;
+                    font-size: 4rem;
+                }
+                .banner2-wrapper {
+                    flex-direction: row;
+                    .content-container {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 5rem;
+                        .content-image {
+                            max-width: 14rem;
+                        }
+                        .content-text {
+                            align-items: center;
+                            h3 {
+                                font-size: 2rem;
+                            }
+                            p {
+                                text-align: center;
+                                width: 92%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner3 {
+    background-color: #f9f9f9;
+    .container {
+        padding: 2.5rem 1.5rem;
+        .banner3-wrapper {
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+                .content-text {
+                    h1 {
+                        text-align: center;
+                        font-size: 2.5rem;
+                        font-weight: bold;
+                        color: black;
+                    }
+                    p {
+                        font-size: 1.7rem;
+                        text-align: center;
+                        color: black;
+                        padding: 1.5rem 0 3rem;
+                    }
+                }
+                .questions-and-answers {
+                    display: flex;
+                    flex-direction: column;
+                    .question {
+                        @include centerAll;
+                        background-color: white;
+                        padding: 2.7rem;
+                        &:hover {
+                            background-color: rgb(245, 240, 240);
+                            p {
+                                text-decoration: underline;
+                            }
+                        }
+                        p {
+                            font-size: 1.8rem;
+                            font-weight: bold;
+                            color: black;
+                        }
+                        .chevron {
+                            display: flex;
+                            &.open span:first-child {
+                                transform: translate(2px) rotate(45deg);
+                            }
+                            &.open span:last-child {
+                                transform: translate(-2px) rotate(-45deg);
+                            }
+                            span {
+                                display: block;
+                                height: 0.1rem;
+                                width: 1.2rem;
+                                background-color: black;
+                                &:first-child {
+                                    transform: translate(2px) rotate(-45deg);
+                                }
+                                &:last-child {
+                                    transform: translate(-2px) rotate(45deg);
+                                }
+                            }
+                        }
+                    }
+                    .answer {
+                        display: flex;
+                        align-items: center;
+                        background-color: white;
+                        &.open {
+                            height: 0vh;
+                            overflow: hidden;
+                        }
+                        p {
+                            padding: 1.3rem 2.7rem 4rem;
+                            font-size: 1.55rem;
+                            color: black;
+                            width: 93.5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include mediaQuery(1080px) {
+        & {
+            .container {
+                padding: 7rem 4rem;
+                .banner3-wrapper {
+                    .content {
+                        .content-text {
+                            h1 {
+                                font-size: 3.7rem;
+                            }
+                            p {
+                                font-size: 2.4rem;
+                                padding: 1rem 0 8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

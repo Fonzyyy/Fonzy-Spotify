@@ -1,0 +1,171 @@
+.header {
+    background-color: black;
+    .container {
+        padding: 1.3rem 1.5rem;
+        .header-wrapper {
+            @include centerAll;
+            .branding {
+                img {
+                    display: flex;
+                    width: 9rem;
+                }
+            }
+            .header-nav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                right: -100rem;
+                height: 100vh;
+                width: 97%;
+                background-color: black;
+                transition: 0.5s ease;
+                gap: 4rem;
+                padding: 3.5rem 4rem;
+                &.open {
+                    right: 0;
+                    transition: 0.5s ease;
+                }
+                .first-nav {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5rem;
+                        li {
+                            a {
+                                text-decoration: none;
+                                color: white;
+                                font-size: 2.8rem;
+                                font-weight: bold;
+                                &:hover {
+                                    color: green;
+                                }
+                            }
+                        }
+                    }
+                }
+                .vertical-line {
+                    display: none;
+                }
+                .horizontal-line {
+                    display: flex;
+                    height: 0.2rem;
+                    width: 2rem;
+                    background-color: white;
+                }
+                .second-nav {
+                    ul {
+                        display: flex; 
+                        flex-direction: column;
+                        gap: 1.5rem;
+                        li {
+                            a {
+                                text-decoration: none;
+                                color: lightgray;
+                                font-size: 2.3rem;
+                                &:hover {
+                                    color: green;
+                                }
+                            }
+                        }
+                    }
+                }
+                img {
+                    display: flex;
+                    width: 9rem;
+                    position: absolute;
+                    bottom: 4.5rem;
+                }
+            }
+            .burger-button {
+                &.open span:first-child {
+                    transform: translate(17px, 7px) rotate(-45deg);
+                    transition: 0.5s ease;
+                }
+    
+                &.open span:nth-child(2) {
+                   opacity: 0;
+                   transition: 0.5s ease;
+                }
+    
+                &.open span:last-child {
+                    transform: translate(17px, -7px) rotate(45deg);
+                    transition: 0.5s ease;
+                }
+                span {
+                    display: block;
+                    height: 0.3rem;
+                    width: 2.2rem;
+                    background-color: white;
+                    transition: 0.5s ease;
+                    &:nth-child(2) {
+                        margin: 0.4rem 0;
+                    }
+                }
+            }
+        }
+    }
+    @include mediaQuery(1080px) {
+        & {
+            .container {
+                padding: 1.9rem 2.5rem;
+                .header-wrapper {
+                    .branding {
+                        img {
+                            width: 13.5rem;
+                        }
+                    }
+                    .header-nav {
+                        position: relative;
+                        top: unset;
+                        right: unset;
+                        height: unset;
+                        width: unset;
+                        background-color: unset;
+                        flex-direction: row;
+                        align-items: center;
+                        padding: 0;
+                        .first-nav {
+                            ul {
+                                flex-direction: row;
+                                gap: 3.4rem;
+                                li {
+                                    a {
+                                        font-size: 1.6rem;
+                                    }
+                                }
+                            }
+                        }
+                        .vertical-line {
+                            display: flex;
+                            height: 1.5rem;
+                            width: 0.1rem;
+                            background-color: white;
+                        }
+                        .horizontal-line {
+                            display: none;
+                        }
+                        .second-nav {
+                            ul {
+                                flex-direction: row;
+                                gap: 3.4rem;
+                                li {
+                                    a {
+                                        font-size: 1.5rem;
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+                        }
+                        img {
+                            display: none;
+                        }
+                    }
+                    .burger-button {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
